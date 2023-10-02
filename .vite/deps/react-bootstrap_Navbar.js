@@ -1,12 +1,15 @@
 "use client";
 import {
+  require_react_dom
+} from "./chunk-MDIHFEFG.js";
+import {
   canUseDOM_default,
   contains,
   listen_default,
   ownerDocument,
   require_prop_types,
   useWindow
-} from "./chunk-SVKXUWTO.js";
+} from "./chunk-KPCB6Z4Z.js";
 import {
   NavbarContext_default,
   SelectableContext_default,
@@ -20,19 +23,16 @@ import {
   useMounted,
   usePrevious,
   useUncontrolled
-} from "./chunk-3IF6WJW5.js";
+} from "./chunk-DURZKLVH.js";
 import {
   require_classnames,
   require_jsx_runtime,
   useBootstrapPrefix
-} from "./chunk-2YUVK4CK.js";
-import {
-  require_react_dom
-} from "./chunk-MMW4JUSU.js";
+} from "./chunk-7VZGYCLT.js";
 import {
   __toESM,
   require_react
-} from "./chunk-MYQCFY5U.js";
+} from "./chunk-L7APZED3.js";
 
 // node_modules/react-bootstrap/esm/Navbar.js
 var import_classnames13 = __toESM(require_classnames());
