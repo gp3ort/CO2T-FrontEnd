@@ -1,7 +1,6 @@
 import Login from "../pages/Login"
 import Signup from "../pages/Signup"
 import Home from "../pages/Home"
-import RouterProtected from "./RouterProtected"
 import LayoutMain from "../layouts/LayoutMain"
 
 import {createBrowserRouter} from "react-router-dom"

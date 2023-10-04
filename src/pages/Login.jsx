@@ -1,10 +1,13 @@
 import './css/login.css';
 import {useState} from 'react';
 import { Link } from 'react-router-dom';
+import { login } from "../redux/actions/userActions";
 
 function Login(){
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+
+    
+
+
     return (
         <div className='container'>
           
