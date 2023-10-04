@@ -1,14 +1,14 @@
 import React from 'react'
-import ReactDOM from 'react-dom/client'
+import ReactDOM from 'react-dom'
 import App from './App.jsx'
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import './index.css'
-import { AuthProvider } from './auth/authProvider.jsx'
+import { Provider } from "react-redux";
+import { store } from "./redux/store.js";
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <AuthProvider>
+ 
+    <Provider store={store}>
        <App />
-    </AuthProvider>
-  </React.StrictMode>,
+    </Provider>
 )
