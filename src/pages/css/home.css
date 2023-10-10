@@ -1,0 +1,181 @@
+  .startContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .container-news{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px 0px 10px 0px;
+  }
+
+  .title{
+    width: 80%;
+  }
+  .container-cards{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .cartImg{
+    width: 19rem;
+    height: 15rem;
+  }
+
+  .newsItem{
+    width: 20rem;
+    
+  }
+
+  .aboutUs{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px 0px 10px 0px;
+    gap: 2rem;
+  }
+
+  .h2{
+    margin: 2rem;
+  }
+
+  .company{
+    width: 30rem;
+    height: 25rem;
+  }
+
+  .companyInfo{
+    width: 45%;
+  }
+
+  .projectsContainer{
+    padding: 10px 0px 10px 0px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .projectsMain{
+    width: 75%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .project{
+    height: 23rem;
+    width: 20rem;
+    margin: 10px;
+  }
+
+  .project-img{
+    height: 20rem;
+    width: 20rem;
+  }
+  @media screen and (max-width: 1050px){
+
+    .projectsContainer{
+      padding: 10px 0px 10px 0px;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .aboutUs{
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 10px 0px 10px 0px;
+      gap: 2rem;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  @media screen and (max-width: 767px){
+    .container-news{
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 10px 0px 10px 0px;
+    }
+
+    .container-cards{
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    
+    }
+
+    .cartImg{
+      width: 9rem;
+      height: 7rem;
+    }
+
+    .newsItem{
+      width: 10rem;
+      
+    }
+
+    .aboutUs{
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 10px 0px 10px 0px;
+    }
+
+    .company{
+      width: 20rem;
+      height: 15rem;
+    }
+
+    .companyInfo{
+      width: 75%;
+    }
+
+    .projectsContainer{
+      padding: 10px 0px 10px 0px;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .projectsMain{
+      width: 75%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+    }
+
+    .project{
+      height: 20rem;
+      width: 15rem;
+      margin: 10px;
+    }
+
+    .project-img{
+      height: 15rem;
+      width: 15rem;
+    }
+  }
+
