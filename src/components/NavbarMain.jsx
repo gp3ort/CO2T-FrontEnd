@@ -6,7 +6,7 @@ import './css/navBarMain.css'
 function NavrBarMain(){
     const dispatch = useDispatch();
     const { user } = useSelector((store) => store.user);
-    console.log(user);
+
     const token = localStorage.getItem("miToken"); 
     const handleClick = () => {
       dispatch(logout());
@@ -23,7 +23,7 @@ function NavrBarMain(){
           {!user && !token ? (
                     <>
                       <Link className="link" to="/login">Login</Link>
-                      <Link className="link" to="/signup">SignUp</Link>
+                      <Link className="link" to="/entity">SignUp</Link>
                     </>
                   ) : (
                     <Link  className="link" to="/" onClick={handleClick}>

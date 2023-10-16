@@ -4,6 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #f0f8ff;
 }
 
 .form {
@@ -15,12 +16,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
 }
 
 
 .container-form {
   background-color: #f0f8ff;
-  height: 100vh;
+ /*  height: 100vh; */
   width: 50%; 
   margin: 0;
   display: flex;
@@ -47,10 +49,16 @@
 
 .container-title{
   width: 60%;
-  height: 15vh;
+/*   height: 15vh; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.container-title > p{
+  font-size: x-large;
+  color: #7e7e7e;
 }
 
 .form button {
@@ -96,6 +104,19 @@
   display: flex;
   flex-direction: column;
 }
+
+.container-address{
+  margin: 10px 0px 10px 0px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 60%;
+}
+
+.container-address > div{
+  width: 30%;
+}
+
 .icon{
   font-size: 30px;
 }
@@ -108,14 +129,16 @@
 @media screen and (max-width: 767px) {
   .container {
     width: 100%;
+  /*   height: 100vh; */
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #f0f8ff;
   }
 
   .container-form {
     background-color: #f0f8ff;
-    height: 100vh;
+   
     min-width: 100%; 
     margin: 0;
     display: flex;
@@ -142,6 +165,19 @@
     background-color: #bad2ff88;
   }
 
+  .container-address{
+    margin: 10px 0px 10px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+   /*  justify-content: space-between; */
+    width: 90%;
+  }
+
+  .container-address > div{
+    width: 100%;
+  }
+
   .form {
     background-color: aliceblue;
     width: 100%; 
@@ -155,7 +191,7 @@
 
   .container-title{
     width: 80%;
-    height: 15vh;
+   /*  height: 15vh; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;

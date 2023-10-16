@@ -1,12 +1,16 @@
 import './css/home.css';
-
+import Aos from 'aos';
+Aos.init();
 const home = () => {
     return (
     <div>
         <div className='container'>
             <div className='container-form'>   
                 <div className='title'>
-                    <h1>Help to change the world</h1>
+                    <h1 data-aos="fade-right"
+                        data-aos-offset="300"
+                        data-aos-easing="ease-in-sine"
+                    >Help to change the world</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc odio in et, lectus sit lorem id integer.</p>
                 </div> 
             </div>
@@ -15,7 +19,7 @@ const home = () => {
             </div>
         </div>
             <div className='container-news'>
-                <h2 className='h2'>News</h2>
+                <h2 className='h2 '>News</h2>
                 <div className='container-cards'>
                     <div className='newsItem'>
                         <img className='cartImg' src='https://media.admagazine.com/photos/644b88b2154ed7b822040126/16:9/w_1920,c_limit/plantas-con-flores.jpg'/>

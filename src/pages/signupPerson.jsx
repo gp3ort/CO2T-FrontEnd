@@ -6,23 +6,27 @@ import { register } from "../redux/actions/userActions";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-function Signup(){
+import validarPassword from '../middleware/validatorPassword';
+
+const SignupPerson = () => {
 
       const [formData, setFormData] = useState({
         businessName: "",
         email: "",
         name: "",
         password: "",
-        entityType: 1,
+        entityType: localStorage.getItem("idEntity"),
         address: "",
-        description: "",
         phoneNumber: "",
-        idRol: 1
+        description: "",
+        idRol: 2
       });
 
       const dispatch = useDispatch();
       const navigate = useNavigate();
-      const handleSubmit = (e) => {
+
+      const handleSubmit = async (e) => {
+
         e.preventDefault();
         const request = { ...formData };
         for (const key in request) {
@@ -30,43 +34,56 @@ function Signup(){
             delete request[key];
           }
         }
+
+        console.log(e.target);
         const businessName = e.target.businessName.value;
         const email = e.target.email.value;
         const name = e.target.name.value;
         const password = e.target.password.value;
         const address = e.target.address.value;
-        const description = e.target.description.value;
         const phoneNumber = e.target.phoneNumber.value;
+        const entityType =  localStorage.getItem("idEntity");
       
-
-        if (!businessName || !email || !name || !password || !address || !description || !phoneNumber) {
+        if (!businessName || !email || !name || !password || !address || !phoneNumber || !entityType) {
           
-          Swal.fire({
+          return Swal.fire({
             icon: "error",
             title: "Error",
             text: "Please complete all fields.",
           });
-          return; 
+          
         }
-        dispatch(register(request)).then(({ payload }) => {
-          console.log(payload);
-          if(payload.status  == 400){
-            return Swal.fire({
-              icon: "error",
-              title: "Error",
-              text: payload.data.errorMessage[0],
-            });
-          }else{
-            Swal.fire({
-              position: 'center',
-              icon: 'success',
-              title: 'Your work has been saved',
-              showConfirmButton: false,
-              timer: 1500
-            })
-            navigate("/login");
-          }
-        });
+        try {
+          await validarPassword(password);
+
+          dispatch(register(request)).then(({ payload }) => {
+
+            if(payload.status  == 400){
+              return Swal.fire({
+                icon: "error",
+                title: "Error",
+                text: payload.data.errorMessage[0],
+              });
+            }else{
+              Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Your work has been saved',
+                showConfirmButton: false,
+                timer: 1500
+              })
+              localStorage.removeItem("idEntity")
+              navigate("/login");
+            }
+          });
+        
+        } catch (error) {
+          Swal.fire({
+            icon: "error",
+            title: "Error",
+            text: error,
+          });
+        }
       };
 
       const handleInput = (e) => {
@@ -80,17 +97,17 @@ function Signup(){
 
 
       return (
-
         <div className='container'>
           
           <div className='container-form'>
             <div className='container-title'>
               <div className='container-icon'>
-                <Link to="/">
+                <Link to="/entity">
                   <i className="bi bi-arrow-left icon"></i>
                 </Link>
               </div>
-              <h1>Sign Up</h1>
+              <h1>Register as an individual</h1>
+              <p>This information will be used to add it to the certificates</p>
             </div>
             
             <Form
@@ -98,14 +115,6 @@ function Signup(){
               onSubmit={handleSubmit}
               onInput={handleInput}
             >
-              <Form.Group className="container-input">
-                <p>Business Name</p>
-                <Form.Control
-                  className="input-form"
-                  type="text"
-                  name="businessName"
-                />
-              </Form.Group>
               <Form.Group className="container-input">
                 <p>Email</p>
                 <Form.Control 
@@ -115,15 +124,27 @@ function Signup(){
                   placeholder='Example@gmail.com'
                 />
               </Form.Group>
-              <Form.Group className="container-input">
-                <p>Name</p>
-                <Form.Control 
-                  className="input-form" 
-                  type="text"  
-                  name="name"
-                  placeholder='John Doe'
-                />
-              </Form.Group>
+              <div className='container-address'>
+                <Form.Group className="container-input">
+                  <p>UserName</p>
+                  <Form.Control 
+                    className="input-form" 
+                    type="text"  
+                    name="businessName"
+                    placeholder='Example S.A'
+                  />
+                </Form.Group>
+                <Form.Group className="container-input">
+                  <p>Name</p>
+                  <Form.Control 
+                    className="input-form" 
+                    type="text"  
+                    name="name"
+                    placeholder='John Doe'
+                  />
+                </Form.Group>
+              </div>
+              
               <Form.Group className="container-input">
                 <p>Password</p>
                 <div className="password-input-container">
@@ -141,30 +162,33 @@ function Signup(){
                     ></i>
                   </div>
               </Form.Group>
-              <Form.Group className="container-input">
-                <p>Address</p>
-                <Form.Control 
-                  className="input-form" 
-                  type="text"  
-                  name="address" 
-                  placeholder='1234 Main St'
-                />
-              </Form.Group>
+              <div className='container-address'> 
+                <Form.Group className="container-input">
+                    <p>Address</p>
+                    <Form.Control 
+                    className="input-form" 
+                    type="text"  
+                    name="address" 
+                    placeholder='1234 Main St'
+                    />
+                </Form.Group>
+                <Form.Group className="container-input">
+                    <p>Phone Number</p>
+                    <Form.Control 
+                        className="input-form" 
+                        type="text"  
+                        name="phoneNumber"
+                        placeholder='11-2222-3333' 
+                    />
+                </Form.Group>
+              </div>
               <Form.Group className="container-input">
                 <p>Description</p>
                 <Form.Control 
-                  className="input-form" 
+                  className="input-form"
                   type="text"  
                   name="description" 
-                />
-              </Form.Group>
-              <Form.Group className="container-input">
-                <p>Phone Number</p>
-                <Form.Control 
-                  className="input-form" 
-                  type="text"  
-                  name="phoneNumber"
-                  placeholder='11-2222-3333' 
+                  
                 />
               </Form.Group>
               <div className='container-link'>
@@ -180,4 +204,4 @@ function Signup(){
       )
   }
   
-  export default Signup;
+  export default SignupPerson;

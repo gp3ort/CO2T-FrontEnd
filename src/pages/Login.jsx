@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import Swal from "sweetalert2";
 
-function Login(){
+const Login = () =>{
 
     const [formData, setFormData] = useState({
        businessName: "",
@@ -52,6 +52,8 @@ function Login(){
         }
       });
     };
+
+
     const handleInput = (e) => {
       const { name, value } = e.target;
       const aux = { ...formData };
@@ -64,8 +66,8 @@ function Login(){
     return (
         <div className='container'>
           
-          <div className='container-form'>
-            <div className='container-title'>
+          <div className='container-form-entity'>
+            <div className='container-title-entity'>
               <div className='container-icon'>
                   <Link to="/">
                     <i className="bi bi-arrow-left icon"></i>
@@ -80,8 +82,12 @@ function Login(){
               className='form'
             >
               <Form.Group className='container-input'>
-                <p>Business Name</p>
-                <Form.Control type="text"  name="businessName" className="input-form"/>
+                <p>UserName</p>
+                <Form.Control 
+                  type="text"  
+                  name="businessName" 
+                  className="input-form"
+                />
               </Form.Group>
               <Form.Group className='container-input'>
                 <p>Password</p>
@@ -101,9 +107,8 @@ function Login(){
               </Form.Group>
               <div className='container-link'>
                 <button className='button' type="submit">Login</button>
-                <Link to="/signup">If you do not have an account you can register</Link>
+                <Link to="/entity">If you do not have an account you can register</Link>
               </div>
-
             </Form>
           </div>
           <div className='container-img'>
