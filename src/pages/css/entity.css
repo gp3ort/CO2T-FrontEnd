@@ -1,0 +1,116 @@
+.container-entity {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .container-title-entity{
+    width: 60%;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+  }
+
+  .container-selecter{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 60%;
+    gap: 1rem;
+    margin: 1rem;
+  }
+
+  .container-radio{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border: #bbbbbb solid 1px;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .container-form-entity {
+    background-color: #f0f8ff;
+    height: 100vh;
+    width: 50%; 
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+  }
+
+  .container-img-entity {
+    flex: 1;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .container-img-entity > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .container-link{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+  }
+
+  .container-link > button{
+    width: 5rem;
+    height: 3rem;
+    margin-bottom: 10px;
+    border: 1px solid #000000;
+    border-radius: 12px; 
+    background-color: #bad2ff88;
+  }
+
+  .text-radio{
+    color: #7e7e7e;
+  }
+
+
+
+  @media screen and (max-width: 767px) {
+    .container-entity {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .container-title-entity {
+      width: 90%;
+    }
+
+    .container-form-entity {
+        background-color: #f0f8ff;
+        height: 100vh;
+        min-width: 100%; 
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container-img-entity {
+        flex: 0; 
+        display: none; 
+      }
+
+      .container-link{
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+      }
+
+  }
