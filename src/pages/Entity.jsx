@@ -50,7 +50,12 @@ function Entity(){
                 onSubmit={handleSubmit}
                 onInput={handleInput}
             >
-                    <div className='container-title-entity'>
+                    <div 
+                    className='container-title-entity'
+                    data-aos="fade-right"
+                    data-aos-offset="300"
+                    data-aos-easing="ease-in-sine"
+                    >
                         <div className='container-icon'>
                             <Link to="/">
                             <i className="bi bi-arrow-left icon"></i>
@@ -59,7 +64,12 @@ function Entity(){
                         <h1>To register, select which entity you are</h1>
                     </div>
                     
-                    <div className='container-selecter'>
+                    <div 
+                    className='container-selecter'
+                    data-aos="fade-right"
+                    data-aos-offset="300"
+                    data-aos-easing="ease-in-sine"
+                    >
                         <label className='container-radio'>
                             <div>
                                 <h2>Person</h2>
@@ -75,7 +85,11 @@ function Entity(){
                             <input type='radio' name='entity' value='Legal Entity'/>
                         </label>
                     </div>
-                    <div className='container-link'>
+                    <div 
+                    className='container-link'
+                    data-aos="fade-up"
+                    data-aos-anchor-placement="center-bottom"
+                    >
                         <button className='button' type="submit">Continue</button>
                         <Link to="/login">If you already have an account, enter here</Link>
                     </div>

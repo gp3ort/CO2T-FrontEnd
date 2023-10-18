@@ -67,7 +67,12 @@ const Login = () =>{
         <div className='container'>
           
           <div className='container-form-entity'>
-            <div className='container-title-entity'>
+            <div 
+            className='container-title-entity'
+            data-aos="fade-right"
+            data-aos-offset="300"
+            data-aos-easing="ease-in-sine"
+            >
               <div className='container-icon'>
                   <Link to="/">
                     <i className="bi bi-arrow-left icon"></i>
@@ -81,7 +86,12 @@ const Login = () =>{
               onInput={handleInput}
               className='form'
             >
-              <Form.Group className='container-input'>
+              <Form.Group 
+              className='container-input'
+              data-aos="fade-right"
+              data-aos-offset="300"
+              data-aos-easing="ease-in-sine"
+              >
                 <p>UserName</p>
                 <Form.Control 
                   type="text"  
@@ -89,7 +99,12 @@ const Login = () =>{
                   className="input-form"
                 />
               </Form.Group>
-              <Form.Group className='container-input'>
+              <Form.Group 
+              className='container-input'
+              data-aos="fade-right"
+              data-aos-offset="300"
+              data-aos-easing="ease-in-sine"
+              >
                 <p>Password</p>
                 <div className="password-input-container">
                   <Form.Control
@@ -105,7 +120,11 @@ const Login = () =>{
                   ></i>
                 </div>
               </Form.Group>
-              <div className='container-link'>
+              <div 
+              className='container-link'
+              data-aos="fade-up"
+              data-aos-anchor-placement="center-bottom"
+              >
                 <button className='button' type="submit">Login</button>
                 <Link to="/entity">If you do not have an account you can register</Link>
               </div>

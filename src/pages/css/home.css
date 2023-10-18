@@ -1,13 +1,31 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,600&display=swap');
- */  *{
+  *{
     font-family: Recoleta,Helvetica Neue,Arial,Helvetica,sans-serif;
   }
+
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #ececec;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #9c9c9c;
+    border-radius: 6px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
   .startContainer {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
   }
+
   .container-news{
     width: 100%;
     display: flex;
@@ -19,6 +37,7 @@
   .title{
     width: 80%;
   }
+
   .container-cards{
     width: 100%;
     display: flex;
@@ -30,12 +49,23 @@
   .cartImg{
     width: 19rem;
     height: 15rem;
-    border-radius: 10px ;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-bottom: 3px;
   }
 
   .newsItem{
-    width: 20rem;
-    
+    width: 19rem;
+    border: 1px solid #dbdbdb;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  }
+  
+  .newsItem:hover{
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    transform: scale(1.03);
   }
 
   .aboutUs{
@@ -45,7 +75,7 @@
     flex-wrap: wrap;
     justify-content: center;
     padding: 10px 0px 10px 0px;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 30px 24px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 8px 8px;
     background-color: #f0f8ff;
   }
 
@@ -70,7 +100,6 @@
 
   .projectsContainer{
     padding: 10px 0px 10px 0px;
-   
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -79,6 +108,18 @@
     align-items: center;
   }
 
+  .container-text-news{
+    min-height: 4rem;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .fecha{
+    font-weight: bold;
+    font-size: small;
+  }
   .projectsMain{
     width: 75%;
     display: flex;
@@ -87,7 +128,7 @@
   }
 
   .project{
-   width: 20rem;
+    width: 20rem;
     margin: 10px;
     border: 1px solid #dbdbdb;
     border-radius: 10px;
@@ -154,13 +195,12 @@
     }
 
     .cartImg{
-      width: 9rem;
-      height: 7rem;
+      width: 15rem;
+      height: 12rem;
     }
 
     .newsItem{
-      width: 10rem;
-      
+      width: 15rem;
     }
 
     .aboutUs{
@@ -174,10 +214,12 @@
     .company{
       width: 20rem;
       height: 15rem;
+      border-radius: 10px;
     }
 
     .companyInfo{
       width: 75%;
+      border-radius: 10px;
     }
 
     .projectsContainer{

@@ -99,7 +99,11 @@ const SignupPerson = () => {
       return (
         <div className='container'>
           
-          <div className='container-form'>
+          <div className='container-form'
+              data-aos="fade-right"
+              data-aos-offset="300"
+              data-aos-easing="ease-in-sine">
+                
             <div className='container-title'>
               <div className='container-icon'>
                 <Link to="/entity">

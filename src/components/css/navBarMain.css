@@ -10,10 +10,15 @@
     align-items: center;
     position: sticky;
     top: 0;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    z-index: 1;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
     border-bottom: 1px solid rgb(233, 243, 252);
 }
 
+.container-nav > img{
+    height: 3rem;
+    width: 5rem;
+}
     
 .link{
     text-decoration: none;
