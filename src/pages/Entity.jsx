@@ -61,7 +61,7 @@ function Entity(){
                             <i className="bi bi-arrow-left icon"></i>
                             </Link>
                         </div>
-                        <h1>To register, select which entity you are</h1>
+                        <h1>Seleccione una opcion para poder avanzar.</h1>
                     </div>
                     
                     <div 
@@ -72,15 +72,15 @@ function Entity(){
                     >
                         <label className='container-radio'>
                             <div>
-                                <h2>Person</h2>
-                                <p className='text-radio'>Im an person</p>
+                                <h2>Individuo</h2>
+                                <p className='text-radio'>Soy una persona</p>
                             </div>
                             <input type='radio' name='entity' value='Individual Person'/>
                         </label>
                         <label className='container-radio'>
                             <div>
-                                <h2>Business</h2>
-                                <p className='text-radio'>we're a business</p>
+                                <h2>Organizacion</h2>
+                                <p className='text-radio'>somos un negocio</p>
                             </div>                         
                             <input type='radio' name='entity' value='Legal Entity'/>
                         </label>
@@ -90,8 +90,8 @@ function Entity(){
                     data-aos="fade-up"
                     data-aos-anchor-placement="center-bottom"
                     >
-                        <button className='button' type="submit">Continue</button>
-                        <Link to="/login">If you already have an account, enter here</Link>
+                        <button className='button' type="submit">Continuar</button>
+                        <Link to="/login">Si ya tiene una cuenta, ingrese aqui</Link>
                     </div>
             </Form>
           <div className='container-img-entity'>

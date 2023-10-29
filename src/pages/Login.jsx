@@ -78,7 +78,7 @@ const Login = () =>{
                     <i className="bi bi-arrow-left icon"></i>
                   </Link>
               </div>
-              <h1>Login</h1>
+              <h1>Iniciar Sesión</h1>
             </div>
             
             <Form
@@ -92,7 +92,7 @@ const Login = () =>{
               data-aos-offset="300"
               data-aos-easing="ease-in-sine"
               >
-                <p>UserName</p>
+                <p>Nombre de usuario</p>
                 <Form.Control 
                   type="text"  
                   name="businessName" 
@@ -105,7 +105,7 @@ const Login = () =>{
               data-aos-offset="300"
               data-aos-easing="ease-in-sine"
               >
-                <p>Password</p>
+                <p>Contraseña</p>
                 <div className="password-input-container">
                   <Form.Control
                     type={showPassword ? "text" : "password"}
@@ -125,8 +125,8 @@ const Login = () =>{
               data-aos="fade-up"
               data-aos-anchor-placement="center-bottom"
               >
-                <button className='button' type="submit">Login</button>
-                <Link to="/entity">If you do not have an account you can register</Link>
+                <button className='button' type="submit">Iniciar</button>
+                <Link to="/entity">Si no tienes una cuenta puedes registrarte</Link>
               </div>
             </Form>
           </div>

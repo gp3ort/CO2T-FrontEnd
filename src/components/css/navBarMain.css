@@ -1,12 +1,12 @@
 
 .container-nav {
-    height: 3rem;
+    min-height: 3rem;
     background-color: rgb(255, 255, 255);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 3rem;
+    padding-right: 3rem;
     align-items: center;
     position: sticky;
     top: 0;
@@ -25,6 +25,12 @@
     color: black;
     padding: 10px;
     font-size: large;
+}
+
+.link-title{
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
 }
 
 .link:hover{

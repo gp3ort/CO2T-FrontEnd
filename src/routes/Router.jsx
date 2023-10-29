@@ -5,6 +5,8 @@ import Entity from "../pages/Entity"
 import LayoutMain from "../layouts/LayoutMain"
 import {createBrowserRouter} from "react-router-dom"
 import SignupPerson from "../pages/signupPerson"
+import Projects from "../pages/Projects"
+import Project from "../pages/Project"
 
 const router = createBrowserRouter([
   {
@@ -31,7 +33,14 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home/>
       },
-
+      {
+        path: "/projects",
+        element: <Projects/>
+      },
+      {
+        path: "/project/:id",
+        element: <Project/>
+      }
     ]
   },
 ])

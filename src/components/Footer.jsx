@@ -9,18 +9,18 @@ const Footer = () => {
           
         <div className="container-copyright">
           <h2>CO2</h2>
-          <p>©2023, All Rights Reserved</p>
+          <p>©2023, Todos los derechos reservados</p>
         </div>
         
         <div className="container-form-subscribe">
           
           <form action="" className="form-footer">
             <h2>Subscribe</h2>
-            <p>Stay up to date with our newsletter</p>
-            <p>Email address</p>
+            <p>Manténgase actualizado con nuestras noticias</p>
+            <p>Direccion de correo electronico</p>
             <input type="text" placeholder="Email" />
-            <button type="submit">Subscribe</button>
-          </form>
+            <button type="submit">Suscribirse</button>
+          </form> 
         </div>
         <div className="container-redes">
           <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">

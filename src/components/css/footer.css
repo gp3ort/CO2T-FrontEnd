@@ -1,5 +1,5 @@
 .footer{
-    margin-top: 2rem;
+
     width: 100%;
     min-height: 17rem;
     border-top: 1px solid #dadada;
@@ -71,4 +71,16 @@
 
 .container-redes > svg{
     cursor: pointer;
+}
+
+@media screen and (max-width: 700px){
+    .container-footer{
+        flex-direction: column;
+        gap: 1rem;
+        margin: 2rem 0px 2rem 0px;
+    }
+
+    .container-copyright ,.container-form-subscribe,.container-redes{
+        width: 100%;
+    }
 }

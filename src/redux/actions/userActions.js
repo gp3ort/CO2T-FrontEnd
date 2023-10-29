@@ -37,7 +37,7 @@ export const signInWithToken = createAsyncThunk( "logear_token", async (  ) => {
             }
             
           } catch (error) {
-            throw error;
+            console.log(error);
           }
 } )
 
