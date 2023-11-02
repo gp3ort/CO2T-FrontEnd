@@ -97,12 +97,10 @@ const SignupPerson = () => {
 
 
       return (
-        <div className='container'>
+        <div className='container-login'>
           
           <div className='container-form'
-              data-aos="fade-right"
-              data-aos-offset="300"
-              data-aos-easing="ease-in-sine">
+              >
                 
             <div className='container-title'>
               <div className='container-icon'>
@@ -110,17 +108,17 @@ const SignupPerson = () => {
                   <i className="bi bi-arrow-left icon"></i>
                 </Link>
               </div>
-              <h1>Register as an individual</h1>
-              <p>This information will be used to add it to the certificates</p>
+              <h1>Registrarme como un individuo</h1>
+              <p>Esta información se utilizará para agregarla a los certificados.</p>
             </div>
             
             <Form
-              className="form"
+              className="form-login"
               onSubmit={handleSubmit}
               onInput={handleInput}
             >
               <Form.Group className="container-input">
-                <p>Email</p>
+                <p>Direccion de correo electronico</p>
                 <Form.Control 
                   className="input-form"
                   type="email"  
@@ -130,7 +128,7 @@ const SignupPerson = () => {
               </Form.Group>
               <div className='container-address'>
                 <Form.Group className="container-input">
-                  <p>UserName</p>
+                  <p>Nombre de usuario</p>
                   <Form.Control 
                     className="input-form" 
                     type="text"  
@@ -139,7 +137,7 @@ const SignupPerson = () => {
                   />
                 </Form.Group>
                 <Form.Group className="container-input">
-                  <p>Name</p>
+                  <p>Nombre</p>
                   <Form.Control 
                     className="input-form" 
                     type="text"  
@@ -150,7 +148,7 @@ const SignupPerson = () => {
               </div>
               
               <Form.Group className="container-input">
-                <p>Password</p>
+                <p>Contraseña</p>
                 <div className="password-input-container">
                     <Form.Control
                       type={showPassword ? "text" : "password"}
@@ -168,7 +166,7 @@ const SignupPerson = () => {
               </Form.Group>
               <div className='container-address'> 
                 <Form.Group className="container-input">
-                    <p>Address</p>
+                    <p>Dirección</p>
                     <Form.Control 
                     className="input-form" 
                     type="text"  
@@ -177,7 +175,7 @@ const SignupPerson = () => {
                     />
                 </Form.Group>
                 <Form.Group className="container-input">
-                    <p>Phone Number</p>
+                    <p>Telefono</p>
                     <Form.Control 
                         className="input-form" 
                         type="text"  
@@ -187,7 +185,7 @@ const SignupPerson = () => {
                 </Form.Group>
               </div>
               <Form.Group className="container-input">
-                <p>Description</p>
+                <p>descripción</p>
                 <Form.Control 
                   className="input-form"
                   type="text"  
@@ -196,8 +194,8 @@ const SignupPerson = () => {
                 />
               </Form.Group>
               <div className='container-link'>
-                <button className='button' type="submit">Sign Up</button>
-                <Link to="/login">If you already have an account, enter here</Link>
+                <button className='button' type="submit">Registrarse</button>
+                <Link to="/login">Si ya tienes una cuenta, ingresa aquí.</Link>
               </div>
             </Form>
           </div>

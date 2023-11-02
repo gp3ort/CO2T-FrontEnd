@@ -1,5 +1,5 @@
-  *{
-    font-family: Recoleta,Helvetica Neue,Arial,Helvetica,sans-serif;
+  :root{
+    font-family: Recoleta,Helvetica Neue,Arial,Helvetica,sans-serif !important;
   }
 
   ::-webkit-scrollbar {
@@ -19,11 +19,20 @@
     background: #555;
   }
 
+
   .startContainer {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .container-home {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f8ff;
   }
 
   .container-news{
@@ -32,6 +41,7 @@
     flex-wrap: wrap;
     justify-content: center;
     padding: 10px 0px 10px 0px;
+    background-color: white;
   }
 
   .title{
@@ -128,6 +138,7 @@
   }
 
   .project{
+    background-color: white;
     width: 20rem;
     margin: 10px;
     border: 1px solid #dbdbdb;

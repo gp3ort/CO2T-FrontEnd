@@ -64,35 +64,31 @@ const Login = () =>{
     const [showPassword, setShowPassword] = useState(false);
 
     return (
-        <div className='container'>
+        <div className='container-login'>
           
           <div className='container-form-entity'>
             <div 
             className='container-title-entity'
-            data-aos="fade-right"
-            data-aos-offset="300"
-            data-aos-easing="ease-in-sine"
+            
             >
               <div className='container-icon'>
                   <Link to="/">
                     <i className="bi bi-arrow-left icon"></i>
                   </Link>
               </div>
-              <h1>Login</h1>
+              <h1>Iniciar Sesión</h1>
             </div>
             
             <Form
               onSubmit={handleSubmit}
               onInput={handleInput}
-              className='form'
+              className='form-login'
             >
               <Form.Group 
               className='container-input'
-              data-aos="fade-right"
-              data-aos-offset="300"
-              data-aos-easing="ease-in-sine"
+              
               >
-                <p>UserName</p>
+                <p>Nombre de usuario</p>
                 <Form.Control 
                   type="text"  
                   name="businessName" 
@@ -101,11 +97,9 @@ const Login = () =>{
               </Form.Group>
               <Form.Group 
               className='container-input'
-              data-aos="fade-right"
-              data-aos-offset="300"
-              data-aos-easing="ease-in-sine"
+              
               >
-                <p>Password</p>
+                <p>Contraseña</p>
                 <div className="password-input-container">
                   <Form.Control
                     type={showPassword ? "text" : "password"}
@@ -114,7 +108,7 @@ const Login = () =>{
                   />
                   <i
                     className={`bi ${
-                      showPassword ? "bi-eye-slash" : "bi-eye"
+                      showPassword ? "bi-eye" : "bi-eye-slash"
                     } password-toggle`}
                     onClick={() => setShowPassword(!showPassword)}
                   ></i>
@@ -122,11 +116,10 @@ const Login = () =>{
               </Form.Group>
               <div 
               className='container-link'
-              data-aos="fade-up"
-              data-aos-anchor-placement="center-bottom"
+             
               >
-                <button className='button' type="submit">Login</button>
-                <Link to="/entity">If you do not have an account you can register</Link>
+                <button className='button' type="submit">Iniciar</button>
+                <Link to="/entity">Si no tienes una cuenta puedes registrarte</Link>
               </div>
             </Form>
           </div>

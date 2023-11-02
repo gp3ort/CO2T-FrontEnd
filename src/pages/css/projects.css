@@ -1,0 +1,72 @@
+.container-project{
+    width: 85%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+}
+
+
+
+.carrousel{
+    width: 100%;
+    height: 20rem;
+    background-image: url(https://ik.imagekit.io/900hpd9ky/CO2/pexels-c%C3%A1tia-matos-1072179.jpg?updatedAt=1698615413406);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carrousel > h1{
+    color: white;
+
+    font-family:  'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.container-search{
+    width: 85%;
+    display: flex;
+    align-items: center;
+}
+
+
+.container-search > input{
+    width: 30rem;
+    padding: 10px;
+    border: 1px solid #b1b1b1;
+    border-radius: 10px;
+    outline: invert;
+}
+
+.container-selected-card{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 0rem 2rem 0rem;
+    background-color: #f7f7f7;
+}
+
+@media screen and (max-width: 1050px){
+    .container-project{
+        width: 85%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .carrousel > h1{
+        color: white;
+        text-align: center;
+        font-family:  'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+
+}
