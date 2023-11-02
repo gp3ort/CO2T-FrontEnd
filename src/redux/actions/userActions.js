@@ -43,7 +43,7 @@ export const signInWithToken = createAsyncThunk( "logear_token", async (  ) => {
 
 
 export const logout = createAction( "reset", () => {
-        localStorage.removeItem('miToken')
+        localStorage.clear();
         return {
             payload : null
         }

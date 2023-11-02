@@ -10,7 +10,7 @@ const Projects = () => {
     const [search, setSearch] = useState("");
     const inputSearch = useRef(null);
     const allProjects = useSelector(state => state.projects.allProjects);
-
+   
     const dispatch = useDispatch()
 
     useEffect(() =>{
@@ -29,18 +29,23 @@ const Projects = () => {
         return projects.filter(project =>
           project.name.toLowerCase().includes(searchTerm)
         );
-      };
+    };
 
-    const filteredProjects = filterProjects(allProjects, search);
+    const [cart, setCart] = useState([]);
+
+    useEffect(() => {
+        const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+        setCart(cartItems);
+    }, []);
+
+
+    const filteredProjects =  filterProjects(allProjects, search).filter(project => project.sold === false);
 
     return (
        
         <>
         <div className="carrousel">
-            <h1 data-aos="fade-right"
-                data-aos-offset="300"
-                data-aos-easing="ease-in-sine"
-            >
+            <h1>
                 Explore nuestro catalogo de proyectos que tenemos para usted</h1>
         </div>
         <div className='container-selected-card'>
@@ -58,11 +63,14 @@ const Projects = () => {
             <h2>Proyectos</h2>
             <div className="container-project">
             {filteredProjects.length > 0 ? (
-                filteredProjects.map((item) => <CardProject key={item.id} project={item} />)
+                filteredProjects.map((item) => <CardProject key={item.id} project={item} cart={cart}/>)
                 ) : (
-                <h2>
-                    No hay proyectos
-                </h2>
+                <div className="col-12">
+                    <h2 className="text-center m-2">
+                        No se encontraron proyectos acorde a su busqueda 
+                    </h2>
+                </div>
+                
             )}
             </div>
         </div>

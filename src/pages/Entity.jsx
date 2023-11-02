@@ -52,9 +52,7 @@ function Entity(){
             >
                     <div 
                     className='container-title-entity'
-                    data-aos="fade-right"
-                    data-aos-offset="300"
-                    data-aos-easing="ease-in-sine"
+                   
                     >
                         <div className='container-icon'>
                             <Link to="/">
@@ -66,9 +64,7 @@ function Entity(){
                     
                     <div 
                     className='container-selecter'
-                    data-aos="fade-right"
-                    data-aos-offset="300"
-                    data-aos-easing="ease-in-sine"
+                    
                     >
                         <label className='container-radio'>
                             <div>
@@ -87,8 +83,7 @@ function Entity(){
                     </div>
                     <div 
                     className='container-link'
-                    data-aos="fade-up"
-                    data-aos-anchor-placement="center-bottom"
+                    
                     >
                         <button className='button' type="submit">Continuar</button>
                         <Link to="/login">Si ya tiene una cuenta, ingrese aqui</Link>

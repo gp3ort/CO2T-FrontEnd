@@ -1,9 +1,7 @@
-.footer{
-
+.footer-component{
     width: 100%;
     min-height: 17rem;
     border-top: 1px solid #dadada;
-
 }
 .container-footer{
     width: 100%;
@@ -12,6 +10,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    padding: 2rem;
 }
 
 .container-copyright{
@@ -83,4 +82,10 @@
     .container-copyright ,.container-form-subscribe,.container-redes{
         width: 100%;
     }
+
+    .container-copyright > p, .form-footer > p{
+        text-align: center;
+    }
+
+
 }

@@ -1,0 +1,74 @@
+.container-cart{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.text-NoProjects{
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card{
+    width: 40rem;
+}
+
+.container-form-cart{
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.form-cart{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.button-cart-finish{
+    text-decoration: none;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #b1b1b1;
+    border-radius: 5px;
+    background-color: #bad2ff88;
+    color: #000000;
+    outline: invert;
+    cursor: pointer;
+}
+
+.button-cart-cancel{
+    text-decoration: none;
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #b1b1b1;
+    border-radius: 5px;
+    background-color: #ff010188;
+    color: #000000;
+    outline: invert;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 680px){
+    .card{
+        width: 30rem;
+    }
+}
+
+@media screen and (max-width: 490px){
+    .card{
+        width: 20rem;
+    }
+}
+
+@media screen and (max-width: 325px){
+    .card{
+        width: 15rem;
+    }
+}

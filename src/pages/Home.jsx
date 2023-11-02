@@ -1,20 +1,15 @@
 import './css/home.css';
-import Aos from 'aos';
-Aos.init();
+
 const home = () => {
     window.scrollTo(0, 0);
+
     return (
-    <div>
-        <div className='container'>
+    <div className='container-home-main'>
+        <div className='container-home'>
             <div className='container-form'>   
                 <div className='title'>
-                    <h1 data-aos="fade-right"
-                        data-aos-offset="300"
-                        data-aos-easing="ease-in-sine"
-                    >Ayuda a cambiar el mundo</h1>
-                    <p data-aos="fade-left"
-                        data-aos-offset="300"
-                        data-aos-easing="ease-in-sine">Invierte en proyectos comprando toneladas de CO2 y restaurar la naturaleza.</p>
+                    <h1>Ayuda a cambiar el mundo</h1>
+                    <p >Invierte en proyectos comprando toneladas de CO2 y restaurar la naturaleza.</p>
                 </div> 
             </div>
             <div className='container-img'>
@@ -22,10 +17,8 @@ const home = () => {
             </div>
         </div>
             <div className='container-news'>
-                <h2 className='h2 '>Noticias</h2>
-                <div className='container-cards' 
-                      data-aos="fade-up"
-                      data-aos-duration="1000">
+                <h2 className='h2'>Noticias</h2>
+                <div className='container-cards'>
                     <div className='newsItem'>
                         <img className='cartImg' src='https://verra.org/wp-content/uploads/2023/07/Darkwoods-Forest-Carbon-Project-607-Gordon-MacPherson-on-behalf-of-Nature-Conservancy-of-Canada-Canada-Forest-in-summer-1024x681.jpg'/>
                         <div className='container-text-news'>
@@ -61,8 +54,7 @@ const home = () => {
                 <h2 className='h2'>Eventos</h2>
 
                 <div className='container-cards' 
-                     data-aos="fade-up"
-                     data-aos-duration="1000">
+                     >
                     
                     <div className='newsItem'>
                         <img className='cartImg' src='https://media.admagazine.com/photos/644b88b2154ed7b822040126/16:9/w_1920,c_limit/plantas-con-flores.jpg'/>
@@ -96,18 +88,12 @@ const home = () => {
             </div>
 
         <div className='aboutUs'>
-            <img data-aos="fade-right"
-                data-aos-offset="300"
-                data-aos-easing="ease-in-sine"
+            <img
                 className='company' 
                 src='https://www.treehugger.com/thmb/EGzzG6k9lB-wXQwW_f1e8uQzTkw=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-907686588-0103ab828f954ffba31c8153745dd27e.jpg'
             />
             
-            <div className='companyInfo' 
-                data-aos="fade-left"
-                data-aos-anchor="#example-anchor"
-                data-aos-offset="500"
-                data-aos-duration="500">
+            <div className='companyInfo'  >
 
                 <h2  className='h2'>Sobre nosotros</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias nostrum 
@@ -123,8 +109,7 @@ const home = () => {
             <h2 className='h2'>Proyectos en los que puede invertir</h2>
 
             <div className='projectsMain'
-                  data-aos="fade-up"
-                  data-aos-duration="1000">  
+                 >  
                     <div className='project'>
                         <img className='project-img' src="https://bocdn.ecotree.green/blog/0001/01/ad46dbb447cd0e9a6aeecd64cc2bd332b0cbcb79.jpeg?d=960x540"/>
                         <h3 className='projectTitle'>Project Title</h3>

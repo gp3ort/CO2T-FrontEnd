@@ -64,14 +64,12 @@ const Login = () =>{
     const [showPassword, setShowPassword] = useState(false);
 
     return (
-        <div className='container'>
+        <div className='container-login'>
           
           <div className='container-form-entity'>
             <div 
             className='container-title-entity'
-            data-aos="fade-right"
-            data-aos-offset="300"
-            data-aos-easing="ease-in-sine"
+            
             >
               <div className='container-icon'>
                   <Link to="/">
@@ -84,13 +82,11 @@ const Login = () =>{
             <Form
               onSubmit={handleSubmit}
               onInput={handleInput}
-              className='form'
+              className='form-login'
             >
               <Form.Group 
               className='container-input'
-              data-aos="fade-right"
-              data-aos-offset="300"
-              data-aos-easing="ease-in-sine"
+              
               >
                 <p>Nombre de usuario</p>
                 <Form.Control 
@@ -101,9 +97,7 @@ const Login = () =>{
               </Form.Group>
               <Form.Group 
               className='container-input'
-              data-aos="fade-right"
-              data-aos-offset="300"
-              data-aos-easing="ease-in-sine"
+              
               >
                 <p>Contraseña</p>
                 <div className="password-input-container">
@@ -114,7 +108,7 @@ const Login = () =>{
                   />
                   <i
                     className={`bi ${
-                      showPassword ? "bi-eye-slash" : "bi-eye"
+                      showPassword ? "bi-eye" : "bi-eye-slash"
                     } password-toggle`}
                     onClick={() => setShowPassword(!showPassword)}
                   ></i>
@@ -122,8 +116,7 @@ const Login = () =>{
               </Form.Group>
               <div 
               className='container-link'
-              data-aos="fade-up"
-              data-aos-anchor-placement="center-bottom"
+             
               >
                 <button className='button' type="submit">Iniciar</button>
                 <Link to="/entity">Si no tienes una cuenta puedes registrarte</Link>

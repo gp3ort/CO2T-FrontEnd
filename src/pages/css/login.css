@@ -1,5 +1,5 @@
 
-.container {
+.container-login {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -7,16 +7,19 @@
   background-color: #f0f8ff;
 }
 
-.form {
+.container-icon i{
+  color: #000000;
+}
+.form-login {
   background-color: aliceblue;
   width: 100%; 
-  padding-top: 5px;
-  padding-bottom: 5px;
+/*   padding-top: 5px;
+  padding-bottom: 5px; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+/*   gap: 1rem; */
 }
 
 
@@ -33,7 +36,7 @@
 .input-form {
   display: block;
   width: 100%;
-  padding: 25px 50px 25px 25px;
+  padding: 20px 40px 20px 20px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 20px; 
@@ -61,7 +64,7 @@
 }
 
 
-.form button {
+.form-login button {
   width: 5rem;
   height: 3rem;
   margin-bottom: 10px;
@@ -77,6 +80,7 @@
   align-items: center;
   overflow: hidden;
 }
+ 
 
 .container-input{
   width: 60%;
@@ -94,7 +98,7 @@
 .password-input-container .bi {
   position: absolute;
   top: 50%;
-  right: -50px; 
+  right: 20px; 
   transform: translateY(-50%);
   cursor: pointer;
   z-index: 1;
@@ -156,7 +160,7 @@
     border-radius: 20px; 
   }
 
-  .form button {
+  .form-login button {
     width: 5rem;
     height: 3rem;
     margin-bottom: 10px;
@@ -178,7 +182,7 @@
     width: 100%;
   }
 
-  .form {
+  .form-login {
     background-color: aliceblue;
     width: 100%; 
     padding-top: 5px;

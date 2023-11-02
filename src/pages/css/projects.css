@@ -6,6 +6,8 @@
     align-items: center;
 }
 
+
+
 .carrousel{
     width: 100%;
     height: 20rem;
@@ -20,6 +22,7 @@
 
 .carrousel > h1{
     color: white;
+
     font-family:  'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -37,8 +40,6 @@
     border-radius: 10px;
     outline: invert;
 }
-
-
 
 .container-selected-card{
     width: 100%;
@@ -59,6 +60,12 @@
         gap: 2rem;
         align-items: center;
         justify-content: center;
+    }
+
+    .carrousel > h1{
+        color: white;
+        text-align: center;
+        font-family:  'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     }
 
 
