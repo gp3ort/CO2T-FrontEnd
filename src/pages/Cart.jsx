@@ -10,7 +10,7 @@ const Cart = () =>{
     window.scrollTo(0, 0);
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const project = cart[0]
-    console.log(project);
+   
 
     const { user } = useSelector((store) => store.user);
 
@@ -20,9 +20,12 @@ const Cart = () =>{
     const cancelProject = () =>{
         localStorage.removeItem('cart');
         Swal.fire({
-            title: 'Se cancelo la compra',
+            position: 'center',
             icon: 'success',
-        });
+            title: 'Compra cancelada',
+            showConfirmButton: false,
+            timer: 1500
+        })
         navigate("/projects")
         location.reload();
     }
@@ -32,21 +35,24 @@ const Cart = () =>{
             idEntityUser: user,
             idProject: project.id,
         }
-        console.log(request);
+        
 
         dispatch(addToCart(request))
         .then(({payload}) =>{
-            console.log(payload);
+            
             if(payload.statusCode === 201){
                 dispatch(processCart(request))
                 .then(({payload}) =>{
-                    console.log(payload);
+                    
                     if(payload.statusCode === 200){
-                        console.log("holaaa");
+                        
                         Swal.fire({
-                            title: 'Se ha finalizado la compra',
+                            position: 'center',
                             icon: 'success',
-                        });
+                            title: 'Se genero la compra',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
                         localStorage.removeItem('cart');
                         navigate("/projects")
                         location.reload();
