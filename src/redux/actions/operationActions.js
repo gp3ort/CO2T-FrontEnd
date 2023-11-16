@@ -9,3 +9,7 @@ export const addToCart = createAsyncThunk( 'add_cart', async (body) => {
 export const processCart = createAsyncThunk( 'process_cart', async (body) => {
     return await operationService.processCart(body);
 })
+
+export const cancelCart = createAsyncThunk( 'cancel_cart', async (body) => {
+    return await operationService.cancelCart(body);
+})

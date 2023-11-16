@@ -28,7 +28,19 @@ export const processCart = async (body) =>{
     }
 }
 
+export const cancelCart = async (body) =>{
+    try{
+        console.log(body);
+        const request = await authQuery.post("/cancelCart",body)
+        console.log(request);
+        return request.data
+    }catch(error){
+        console.log(error);
+        return error.response
+    }
+}
 export default {
     addToCart,
-    processCart
+    processCart,
+    cancelCart
 }

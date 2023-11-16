@@ -4,15 +4,24 @@ import formattedNumber from '../middleware/formatNumber';
 import Swal from 'sweetalert2';
 import { useNavigate } from "react-router-dom";
 import React, { useState } from 'react';
+import { useDispatch,useSelector } from 'react-redux'
+
+import {addToCart} from '../redux/actions/operationActions';
 
 
 const CardProject = ({project, cart}) => {
-    const {id, name, description, price , image} = project
+    const {id, name, description, tonsOfOxygen, price , image} = project
     const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const { user } = useSelector((store) => store.user);
 
-
+    console.log(project);
     const isProductInCart = cart.some(item => item.id === id);
 
+    const request = {
+        idEntityUser: user,
+        idProject: project.id,
+    }
 
     const addCartStorage = () => {
         if (isProductInCart) {
@@ -32,11 +41,23 @@ const CardProject = ({project, cart}) => {
                 cancelButtonText: 'Cancelar'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
-                    currentCart.push(project);
-                    localStorage.setItem('cart', JSON.stringify(currentCart));
-                    navigate("/cart")
-                    location.reload();
+
+                    dispatch(addToCart(request))
+                    .then(({payload}) =>{
+                        if(payload.statusCode === 201){
+                            const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
+                            currentCart.push(project);
+                            localStorage.setItem('cart', JSON.stringify(currentCart));
+                            navigate("/cart")
+                            location.reload();
+                        }else if(payload.status === 400){
+                            Swal.fire({
+                                title: 'Error',
+                                text: 'Ocurrio un error',
+                                icon: 'error',
+                            });
+                        }  
+                    })
                     
                 }
             });
@@ -52,8 +73,9 @@ const CardProject = ({project, cart}) => {
             </div>
             <div className="card-body-component">
                 <h4 className="card-title">{name}</h4>
-                <p className="card-text"> {description}</p>
-                <p className='card-body-price'> Precio:  {formattedNumber(price)}</p>
+                <p className="card-text"><span className='fw-bold fs-5'>Descripccion:</span> {description}</p>
+                <p className="card-body-co2" ><span className='fw-bold'> Reduccion de CO2e:</span>  {tonsOfOxygen}T</p>
+                <p className='card-body-price'> <span className='fw-bold'>Precio:</span>   {formattedNumber(price)}</p>
                 <div className='container-buton-card'>
                     {isProductInCart ? (
                         <div className='text-danger button-card-carrito'>Proyecto ya seleccionado</div>

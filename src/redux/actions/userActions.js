@@ -17,6 +17,10 @@ export const login = createAsyncThunk( "logear", async ( body ) => {
     return await authService.login(body)
 } )
 
+export const getUser = createAsyncThunk( "get_user", async ( id ) => {
+    return await authService.getUser(id)
+})
+
 
 export const signInWithToken = createAsyncThunk( "logear_token", async (  ) => {
         const token = localStorage.getItem("miToken"); 
@@ -26,7 +30,8 @@ export const signInWithToken = createAsyncThunk( "logear_token", async (  ) => {
             const userRole = decodedToken.role;
             const username = decodedToken.unique_name;
             const currentTimestamp = Math.floor(Date.now() / 1000);
-        
+            console.log(decodedToken);
+            console.log(currentTimestamp);
             if (decodedToken.exp < currentTimestamp) {
               throw new Error("El token ha expirado");
             }

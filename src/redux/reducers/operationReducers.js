@@ -22,5 +22,11 @@ export const operationReducer = createReducer(initialState, (builder) => {
                 result: action.payload
             }
         })
+        .addCase(processCart.fulfilled, (state, action)   =>{
+            return {
+                ...state,
+                result : action.payload
+            }
+        })
 })
 
