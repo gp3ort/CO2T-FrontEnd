@@ -93,7 +93,7 @@ function NavrBarMain(){
                         </a>
                         <ul className="dropdown-menu">   
                             <Link
-                              onClick={userLogin}
+                              /* onClick={userLogin} */
                               className="link dropdown-item"
                               data-bs-toggle="modal"
                               data-bs-target="#exampleModal">
@@ -123,7 +123,7 @@ function NavrBarMain(){
             </div>
             <div className="modal-body">
               <form className="container-perfil">
-                <h6> Correo electronico</h6>
+{/*                 <h6> Correo electronico</h6>
                 <input type="text" placeholder="alfonso@gmail.com" disabled/>
                 <div className="container-perfil-chilldrem">
                   <h6>Nombre usuario</h6>
@@ -149,7 +149,7 @@ function NavrBarMain(){
                     <h6>Tipo de entidad</h6>
                     <input type="text" placeholder={auth.entityType} disabled/>
                 
-                </div>
+                </div> */}
                
               </form>
             </div>

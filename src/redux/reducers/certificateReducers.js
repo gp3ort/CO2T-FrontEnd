@@ -1,4 +1,4 @@
-import { buildCertificate } from "../../services/certificateService";
+/* import { buildCertificate } from "../../services/certificateService";
 import { createReducer } from "@reduxjs/toolkit";
 
 
@@ -17,4 +17,4 @@ export const certificateReducers = createReducer( initialState, ( builder ) =>{
 
             }
         })
-})
+}) */
