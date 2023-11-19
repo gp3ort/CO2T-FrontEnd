@@ -25,7 +25,16 @@ export const login = async (body) => {
     }
 }
 
+export const getUser = async (id) => {
+    try{
+        const request = await authQuery.get("/user/" + id)
+        return request
+    }catch (error){
+        return error.response
+    }
+}
 export default { 
     register,
-    login
+    login,
+    getUser
 }

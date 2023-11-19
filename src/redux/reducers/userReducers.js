@@ -1,11 +1,11 @@
 import { createReducer } from "@reduxjs/toolkit";
-import { cargarUsuario, register, login, logout, signInWithToken } from '../actions/userActions'
+import { cargarUsuario, register, login, logout, signInWithToken , getUser} from '../actions/userActions'
 const initialState = {
     user: null,
     token : null,
     error: null,
 }
-export const userReducer = createReducer( initialState, ( builder ) => 
+export const userReducer = createReducer( initialState, ( builder ) => {
     builder
         .addCase( cargarUsuario, ( stateActual, action ) => {
             return {
@@ -68,4 +68,12 @@ export const userReducer = createReducer( initialState, ( builder ) =>
                 token : null
             }
         })
-)
+        .addCase(getUser, (stateActual, action) =>{
+            console.log(action);
+            return {
+                ...stateActual,
+                user : action.payload.user,
+                token : action.payload.token
+            }
+        })
+    })

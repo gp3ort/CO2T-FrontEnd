@@ -12,7 +12,7 @@ const Footer = () => {
         
         <div className="container-form-subscribe">
           
-          <form action="" className="form-footer">
+          <form className="form-footer">
             <h2>Subscribe</h2>
             <p>Manténgase actualizado con nuestras noticias</p>
             <p>Direccion de correo electronico</p>

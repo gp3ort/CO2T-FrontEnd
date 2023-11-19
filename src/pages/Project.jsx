@@ -68,6 +68,9 @@ const Project = () => {
                         <h2>Descripcion</h2>
                         {project.description}
                     </div>
+                    <br />
+                    <h2>Compensacion de Co2</h2>
+                    <p>Este proyecto tiene un total de {project.tonsOfOxygen}T de compensacion para el medio ambiente</p>
                 </div>
                 
                     <form className="container-form-project">

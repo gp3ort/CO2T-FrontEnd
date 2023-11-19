@@ -95,7 +95,6 @@ const SignupPerson = () => {
 
       const [showPassword, setShowPassword] = useState(false);
 
-
       return (
         <div className='container-login'>
           

@@ -17,27 +17,37 @@
     overflow: hidden;
     text-overflow: ellipsis;
     max-height: 3rem;
+    margin: 0;
 }
 
 .card-title{
     min-height: 4rem;
 }
+.card-body-co2{
+    font-size: 1.2rem;
+    margin: 0;
+    position: relative;
+    left: 0px;
+    margin: 0;
+}
 
 .card-body-component{
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: .5rem;
     padding: 10px;
     max-height: 20rem;
     width: 100%;
     justify-content: space-between;
+    margin: 0;
 }
 
 .card-body-price{
-    font-size: x-large;
+    font-size: 1.2rem;
     position: relative;
-    bottom: -20px;
+    
     left: 0px;
+    margin: 0;
 }
 
 .container-buton-card{
@@ -47,19 +57,12 @@
 .button-card-carrito{
     color: black;
     cursor: pointer;
-/*     position: relative;
-    bottom: -30px;
-    left: 40px;
-    transition: 0.3s; */
 }
 
 .button-card-detalles{
     color: black;
     cursor: pointer;
-/*     position: relative;
-    bottom: 10px;
-    left: 10px;
-    transition: 0.3s; */
+
     
 }
 

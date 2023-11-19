@@ -45,8 +45,7 @@ const Projects = () => {
        
         <>
         <div className="carrousel">
-            <h1>
-                Explore nuestro catalogo de proyectos que tenemos para usted</h1>
+            <h1>Explore nuestro catalogo de proyectos que tenemos para usted</h1>
         </div>
         <div className='container-selected-card'>
             <div className="container-search">
@@ -55,9 +54,7 @@ const Projects = () => {
                     ref={inputSearch}
                     type="text"
                     placeholder="Nombre del proyecto"
-                   
                 />
-
             </div> 
             
             <h2>Proyectos</h2>

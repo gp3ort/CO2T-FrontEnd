@@ -1,4 +1,4 @@
-import { addToCart , processCart} from "../actions/operationActions";
+import { addToCart , processCart, cancelCart} from "../actions/operationActions";
 import { createReducer } from "@reduxjs/toolkit";
 
 const initialState = {
@@ -20,6 +20,12 @@ export const operationReducer = createReducer(initialState, (builder) => {
             return{
                 ...state,
                 result: action.payload
+            }
+        })
+        .addCase(cancelCart.fulfilled, (state, action)   =>{
+            return {
+                ...state,
+                result : action.payload
             }
         })
 })

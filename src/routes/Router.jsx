@@ -8,6 +8,8 @@ import SignupPerson from "../pages/signupPerson"
 import Projects from "../pages/Projects"
 import Project from "../pages/Project"
 import Cart from "../pages/Cart"
+import Pay from "../pages/Pay"
+import Certificate from "../pages/Certificate"
 
 const router = createBrowserRouter([
   {
@@ -26,6 +28,19 @@ const router = createBrowserRouter([
     path: "/entity",
     element: <Entity/>
   },
+
+  {
+    path: "/pay",
+    element: <Pay/>
+  },
+  {
+    path: "/cart",
+    element: <Cart/>
+  },
+  {
+    path: "/certificate",
+    element: <Certificate/>
+  },
   {
     path: "/",
     element: <LayoutMain/>,
@@ -42,10 +57,7 @@ const router = createBrowserRouter([
         path: "/project/:id",
         element: <Project/>
       },
-      {
-        path: "/cart",
-        element: <Cart/>
-      }
+
     ]
   },
 ])
