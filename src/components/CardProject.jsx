@@ -15,7 +15,6 @@ const CardProject = ({project, cart}) => {
     const dispatch = useDispatch();
     const { user } = useSelector((store) => store.user);
 
-    console.log(project);
     const isProductInCart = cart.some(item => item.id === id);
 
     const request = {
@@ -44,6 +43,7 @@ const CardProject = ({project, cart}) => {
 
                     dispatch(addToCart(request))
                     .then(({payload}) =>{
+                        console.log(payload);
                         if(payload.statusCode === 201){
                             const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
                             currentCart.push(project);

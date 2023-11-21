@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const certificateQuery = axios.create({
-    baseURL: 'https://localhost:7179/api/Certificate',
+    baseURL: import.meta.env.VITE_PATH  + '/Certificate',
 })
 
 export const buildCertificate = async (body) =>{

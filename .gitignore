@@ -1,5 +1,6 @@
 # Directorios
 node_modules/
+.env/
 .vite/
 dist/
 dist-ssr/

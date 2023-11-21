@@ -80,6 +80,11 @@
     font-size: 0.9em;
 }
 
+#loading-message {
+    display: none;
+    text-align: center;
+    font-weight: 700;
+}
 .payment-form .products .total {
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     margin-top: 10px;
@@ -174,6 +179,6 @@
     .container-card-credit{
         display: flex;
         flex-direction: column;
-        
+
     }
 }

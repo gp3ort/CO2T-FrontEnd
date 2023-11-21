@@ -23,6 +23,7 @@ const Cart = () =>{
         }
         dispatch(cancelCart(request))
         .then(({payload}) =>{
+            console.log(payload);
             if(payload.statusCode === 200){
                 localStorage.removeItem('cart');
                 navigate("/projects")
@@ -69,7 +70,7 @@ const Cart = () =>{
                                         <div className="row justify-content-md-center">
                                         <div className="col-md-3">
                                             <img
-                                                    className="img-fluid mx-auto d-block image"
+                                                    className="img-fluid"
                                                     src={project.image.fileNameURL}
                                             />
                                         </div>
@@ -86,7 +87,7 @@ const Cart = () =>{
                                             </div>
                                         </div>
                                         <div className="col-md-3 product-detail">
-                                            <label for="quantity"><h2>Cantidad</h2></label>
+                                            <label htmlFor="quantity"><h2>Cantidad</h2></label>
                                             <input type="text" disabled value="1" min="1" className="form-control" />
                                         </div>
                                         </div>
@@ -121,7 +122,7 @@ const Cart = () =>{
                                             >
                                             <path
                                                 fill="#009EE3"
-                                                fill-rule="nonzero"
+                                                fillRule="nonzero"
                                                 id="chevron_left"
                                                 d="M7.05 1.4L6.2.552 1.756 4.997l4.449 4.448.849-.848-3.6-3.6z"
                                             ></path>

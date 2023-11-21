@@ -1,13 +1,12 @@
 import axios from "axios";
 
-const authQuery = axios.create({
-    baseURL: 'https://localhost:7179/api/Project',
+const projectQuery = axios.create({
+    baseURL: import.meta.env.VITE_PATH  + '/api/Project',
 })
 
 export const getAllProjects = async () =>{
     try{
-        const request = await authQuery.get("/getAllProjects")
-        console.log(request);
+        const request = await projectQuery.get("/getAllProjects")
         return request.data
     }catch(error){
         console.log(error);
@@ -17,9 +16,7 @@ export const getAllProjects = async () =>{
 
 export const getProjectById = async (id) =>{
     try{
-        console.log(id);
-        const request = await authQuery.get(`/getProject?id=${id}`)
-        console.log(request);
+        const request = await projectQuery.get(`/getProject?id=${id}`)
         return request.data;
     }catch(error){
         console.log(error);

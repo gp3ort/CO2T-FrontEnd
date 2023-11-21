@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
-import { useDispatch,useSelector } from 'react-redux'
+import React from 'react';
+import { useSelector } from 'react-redux'
 import Confetti from 'react-confetti'
-import { buildCertificate } from '../redux/actions/certificateActions'
 import { useNavigate } from 'react-router-dom';
-import Swal from 'sweetalert2';
-import FileSaver from 'file-saver';
+
 import './css/certificate.css'
 import axios from "axios"
 
@@ -15,13 +13,7 @@ const Certificate = () =>{
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const project = cart[0]
 
-    const dispatch = useDispatch();
     const navigate = useNavigate();
-
-    console.log(user);
-    console.log(project);
-
-    const [pdfData, setPdfData] = useState(null);
 
     const dowloandCertificate = async () =>{
         const body = {
@@ -32,50 +24,36 @@ const Certificate = () =>{
             baseURL: 'https://localhost:7179/api/Certificate',
         })
         try{
-            const request = await certificateQuery.post("/buildCertificate",body)
-            console.log(request);
-            setPdfData(request.data);
+
+              const request = await certificateQuery.post("/buildCertificate",body  ,{ responseType: 'arraybuffer' })
+              const url = URL.createObjectURL(new Blob([request.data], { type: 'application/pdf' }));
+              const link = document.createElement('a');
+  
+
+                link.href = url;
+
+                link.setAttribute("download","certificado.pdf");
+                document.body.appendChild(link);
+
+                link.click();
+
+                document.body.removeChild(link);
+              
             const blob = new Blob([pdfData], { type: 'application/pdf' });
-            console.log('Blob size:', blob.size);
-            console.log('Blob type:', blob.type);
-            FileSaver.saveAs(blob, 'certificado.pdf');
-            return request
+            localStorage.removeItem('cart')
+            navigate("/")
         }catch(error){
             console.log(error.response);
             return error.response
         }
 
     }
-/*         dispatch(buildCertificate(request))
-        .then(({payload}) =>{  
-            console.log(payload.status);
-            if (payload.status === 200) {
-                setPdfData(payload.data);
-                console.log(pdfData);
-                handleDownload();
-              } else if (payload.status === 400) {
-                Swal.fire({
-                  title: 'Error',
-                  text: 'Ocurrió un error',
-                  icon: 'error',
-                });
-              }
-        })     */    
+ 
    
     const returnHome = ()=>{
         localStorage.removeItem('cart');
         navigate('/')
     }
-
-    const handleDownload = () => {
-        console.log(pdfData);
-        if (pdfData) {
-            const blob = new Blob([pdfData], { type: 'application/pdf' });
-            console.log('Blob size:', blob.size);
-            console.log('Blob type:', blob.type);
-            FileSaver.saveAs(blob, 'certificado.pdf');
-        }
-    };
 
     return (
         <>

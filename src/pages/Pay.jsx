@@ -49,7 +49,6 @@ const Pay =() =>{
         setState({ ...state, focus: e.target.dataset.name || e.target.name });
     };
     const resultPayment = useMercadoPago();  
-    console.log(resultPayment);
 
    
     const finishPay = () =>{
@@ -57,6 +56,17 @@ const Pay =() =>{
             idEntityUser: user,
             idProject: project.id || 0,
         }
+        if(resultPayment){
+            {Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: resultPayment.detail,
+                showConfirmButton: false,
+                text: resultPayment.status,
+                timer: 1500
+            })}
+        }
+        
         dispatch(processCart(request))
         .then(({payload}) =>{
                     
@@ -101,7 +111,7 @@ const Pay =() =>{
                     </div>
                     <div className="payment-details">
                         <form id="form-checkout">
-                            <h3 class="title">Detalles del comprador</h3>
+                            <h3 className="title">Detalles del comprador</h3>
                             <div className="row">
                                 <div className="form-group col">
                                     <input
@@ -240,7 +250,7 @@ const Pay =() =>{
                                             >
                                                 <path
                                                         fill="#009EE3"
-                                                        fill-rule="nonzero"
+                                                        fillRule="nonzero"
                                                         id="chevron_left"
                                                         d="M7.05 1.4L6.2.552 1.756 4.997l4.449 4.448.849-.848-3.6-3.6z"
                                                 ></path>
@@ -248,7 +258,9 @@ const Pay =() =>{
                                             Volver al carrito
                                         </Link>
                                     </div>
-                                   
+                                    <br />
+                                        <p id="loading-message">Cargando, por favor espere...</p>
+                                    <br />
                                    
                                 </div>
                                 <progress value="0" className="progress-bar d-none">
@@ -265,18 +277,7 @@ const Pay =() =>{
                 
                 
             </div>
-            {resultPayment && 
-            <>
-            {Swal.fire({
-                position: 'center',
-                icon: 'success',
-                title: resultPayment.detail,
-                showConfirmButton: false,
-                text: resultPayment.status,
-                timer: 1500
-            })}
-            </>
-            }
+           
         </section>
         
         </>

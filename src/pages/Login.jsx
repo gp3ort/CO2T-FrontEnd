@@ -33,14 +33,14 @@ const Login = () =>{
 
       dispatch(login(request))
       .then(({ payload }) => {
-        if(payload.status  == 400){
+        if(payload.status !==200){
           return Swal.fire({
             icon: "error",
             title: "Error",
             text: payload.data.errorMessage[0],
           });
         }else{
-          console.clear();
+          
           Swal.fire({
             position: 'center',
             icon: 'success',
