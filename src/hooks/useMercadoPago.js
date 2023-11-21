@@ -20,7 +20,7 @@ export default function useMercadoPago() {
 
     useEffect(() => {
         if (MercadoPago) {
-            const mp = new MercadoPago("TEST-0280e3f0-1b2b-45a5-a2ac-acadc3bdf4b6");
+            const mp = new MercadoPago(import.meta.env.VITE_PUBLIC_KEY);
             const cardForm = mp.cardForm({
                 amount: String(project.price),
                 autoMount: true,
@@ -36,6 +36,7 @@ export default function useMercadoPago() {
 
                     onSubmit: (event) => {
                         event.preventDefault();
+                        document.getElementById('loading-message').style.display = 'block';
 
                         const {
                             paymentMethodId: paymentMethodId,
@@ -50,7 +51,7 @@ export default function useMercadoPago() {
                         } = cardForm.getCardFormData();
                         console.log(cardForm.getCardFormData());
                         fetch(
-                            `https://localhost:7179/api/MercadoPago/pay`,
+                            import.meta.env.VITE_PATH  + `/api/MercadoPago/pay`,
                             {
                                 // entry point backend
                                 method: "POST",

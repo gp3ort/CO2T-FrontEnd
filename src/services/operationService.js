@@ -1,13 +1,13 @@
 import axios from "axios";
 
-const authQuery = axios.create({
-    baseURL: 'https://localhost:7179/api/Operations',
+const operationQuery = axios.create({
+    baseURL: import.meta.env.VITE_PATH  +  '/api/Operations',
 })
 
 export const addToCart = async (body) =>{
     try{
         console.log(body);
-        const request = await authQuery.post("/addToCart",body)
+        const request = await operationQuery.post("/addToCart",body)
         console.log(request);
         return request.data
     }catch(error){
@@ -19,7 +19,7 @@ export const addToCart = async (body) =>{
 export const processCart = async (body) =>{
     try{
         console.log(body);
-        const request = await authQuery.post("/processCart",body)
+        const request = await operationQuery.post("/processCart",body)
         console.log(request);
         return request.data
     }catch(error){
@@ -31,7 +31,7 @@ export const processCart = async (body) =>{
 export const cancelCart = async (body) =>{
     try{
         console.log(body);
-        const request = await authQuery.post("/cancelCart",body)
+        const request = await operationQuery.post("/cancelCart",body)
         console.log(request);
         return request.data
     }catch(error){

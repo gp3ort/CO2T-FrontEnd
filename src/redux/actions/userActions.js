@@ -24,14 +24,12 @@ export const getUser = createAsyncThunk( "get_user", async ( id ) => {
 
 export const signInWithToken = createAsyncThunk( "logear_token", async (  ) => {
         const token = localStorage.getItem("miToken"); 
-        console.log("token", token);
         try {
             const decodedToken = jwtDecode(token);
             const userRole = decodedToken.role;
             const username = decodedToken.unique_name;
             const currentTimestamp = Math.floor(Date.now() / 1000);
-            console.log(decodedToken);
-            console.log(currentTimestamp);
+
             if (decodedToken.exp < currentTimestamp) {
               throw new Error("El token ha expirado");
             }

@@ -16,7 +16,6 @@ export const projectsReducer = createReducer(initialState, (builder) =>{
             }
         })
         .addCase(getProjectById.fulfilled, (state, action) =>{
-            console.log(action.payload);
             return {
                 ...state,
                 project: action.payload.result,

@@ -6,7 +6,7 @@ import './css/navBarMain.css'
 
 function NavrBarMain(){
     const dispatch = useDispatch();
-    const  {user }  = useSelector((store) => store.user);
+    const  {user}  = useSelector((store) => store.user);
     console.log(user);
     const token = localStorage.getItem("miToken"); 
     
@@ -14,7 +14,7 @@ function NavrBarMain(){
       dispatch(logout());
     };
 
-
+/* 
     const userLogin = () =>{
       dispatch(getUser(user))
       .then(({payload}) =>{
@@ -30,10 +30,10 @@ function NavrBarMain(){
         }  
       })
     }
-
+ */
     
-    const [auth, setAuth] = useState(null);
-    console.log(auth);
+ /*    const [auth, setAuth] = useState(null);
+    console.log(auth); */
     const [cartCount, setCartCount] = useState(0);
     
     useEffect(() => {
@@ -114,7 +114,7 @@ function NavrBarMain(){
         </nav>
                     
       </header>
-      <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">

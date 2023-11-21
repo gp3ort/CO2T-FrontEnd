@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const authQuery = axios.create({
-    baseURL: 'https://localhost:7179/api/UsersAuth',
+    baseURL: import.meta.env.VITE_PATH + '/api/UsersAuth',
 })
 
 export const register = async (body) =>{

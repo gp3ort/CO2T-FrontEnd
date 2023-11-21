@@ -14,7 +14,7 @@ export const userReducer = createReducer( initialState, ( builder ) => {
              }
         } )
         .addCase( register.fulfilled, ( stateActual, action ) => {
-            console.log(action)
+           
             if(action.payload.status === 200){
                 return {
                     ...stateActual,
@@ -34,7 +34,6 @@ export const userReducer = createReducer( initialState, ( builder ) => {
             
         } )
         .addCase( login.fulfilled, (stateActual, action) => {
-            console.log(action);
             
             if (action.payload.status === 200) {
                 return {
@@ -54,7 +53,6 @@ export const userReducer = createReducer( initialState, ( builder ) => {
             
         })
         .addCase( signInWithToken.fulfilled, (stateActual, action) => {
-            console.log(action)
             return {
                 ...stateActual,
                 user : action.payload.user,
