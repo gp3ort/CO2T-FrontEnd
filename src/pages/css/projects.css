@@ -47,6 +47,7 @@
     margin-right: 1rem;
     max-height: 32rem;
     background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .container-filter > div > input, .container-filter > div > label{
