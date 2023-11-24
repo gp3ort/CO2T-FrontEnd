@@ -21,7 +21,7 @@ const router = createBrowserRouter([
     element: <SignupBusiness/>
   },
   {
-    path: "/SignupPerson",
+    path: "/signupPerson",
     element: <SignupPerson/>
   },
   {
