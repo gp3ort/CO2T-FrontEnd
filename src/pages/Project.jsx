@@ -7,11 +7,13 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import './css/project.css'
+import {addToCart} from '../redux/actions/operationActions';
 
 const Project = () => {
     window.scrollTo(0, 0);
     const { id } = useParams();
     const dispatch = useDispatch();
+    const { user } = useSelector((store) => store.user);
 
 
     useEffect(() => {
@@ -26,7 +28,12 @@ const Project = () => {
         return item.id == id
     } );
 
-    const addToCart = () => {
+    const request = {
+        idEntityUser: user,
+        idProject: id,
+    }
+
+    const addCartStorage = () => {
         Swal.fire({
             title: '¿Seguro que desea agregar este proyecto al carrito?',
             icon: 'question',
@@ -37,11 +44,23 @@ const Project = () => {
             cancelButtonText: 'Cancelar'
         }).then((result) => {
             if (result.isConfirmed) {
-                const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
-                currentCart.push(project);
-                localStorage.setItem('cart', JSON.stringify(currentCart));
-                navigate("/cart")
-                location.reload();
+                dispatch(addToCart(request))
+                .then(({payload}) =>{
+                    console.log(payload);
+                    if(payload.statusCode === 201){
+                        const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
+                        currentCart.push(project);
+                        localStorage.setItem('cart', JSON.stringify(currentCart));
+                        navigate("/cart")
+                        location.reload();
+                    }else if(payload.status === 400){
+                        Swal.fire({
+                            title: 'Error',
+                            text: 'Ocurrio un error',
+                            icon: 'error',
+                        });
+                    }  
+                })
             }
         });
     };
@@ -84,7 +103,7 @@ const Project = () => {
                                 ) : cart.length == 0 ? (
                                     <Link 
                                         className="container-cart-icon"
-                                        onClick={() => addToCart(project)}
+                                        onClick={() => addCartStorage(project)}
                                     >
                                       <i className="bi bi-cart-plus icon"></i>
                                     </Link>
