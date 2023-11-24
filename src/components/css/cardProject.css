@@ -1,0 +1,82 @@
+.card-component{
+    width: 18rem;
+    min-height: 24rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.card-component.sold-out {
+    filter: grayscale(100%);
+    width: 18rem;
+    min-height: 24rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.container-card-img > img{
+    width: 18rem;
+    height: 12rem;
+}
+
+.container-card-img{
+    width: 100%;
+}
+
+.card-text{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 3rem;
+    margin: 0;
+}
+
+.card-title{
+    min-height: 4rem;
+}
+.card-body-co2{
+    font-size: 1.2rem;
+    margin: 0;
+    position: relative;
+    left: 0px;
+    margin: 0;
+}
+
+.card-body-component{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    padding: 10px;
+    max-height: 20rem;
+    width: 100%;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.card-body-price{
+    font-size: 1.2rem;
+    position: relative;
+    
+    left: 0px;
+    margin: 0;
+}
+
+.container-buton-card{
+    display: flex;
+    gap: 1rem;
+}
+.button-card-carrito{
+    color: black;
+    cursor: pointer;
+}
+
+.button-card-detalles{
+    color: black;
+    cursor: pointer;
+
+    
+}
+
+
+
+.button-card-carrito :hover, .button-card-detalles :hover{
+    color: #007bff;
+    transition: 0.3s;
+    transform: scale(1.03);
+}
+

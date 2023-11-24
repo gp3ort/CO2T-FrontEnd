@@ -1,0 +1,238 @@
+
+.container-login {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f8ff;
+}
+
+.container-icon i{
+  color: #000000;
+}
+.form-login {
+  background-color: aliceblue;
+  width: 100%; 
+/*   padding-top: 5px;
+  padding-bottom: 5px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+/*   gap: 1rem; */
+}
+
+
+.container-form {
+  background-color: #f0f8ff;
+  width: 50%; 
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-form {
+  display: block;
+  width: 100%;
+  padding: 20px 40px 20px 20px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px; 
+}
+
+
+.container-img > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.container-title{
+  width: 60%;
+  min-height: 14rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.container-title > p{
+  font-size: x-large;
+  color: #7e7e7e;
+}
+
+
+.form-login button {
+  width: 5rem;
+  height: 3rem;
+  margin-bottom: 10px;
+  border: 1px solid #000000;
+  border-radius: 12px; 
+  background-color: #bad2ff88;
+}
+.container-img {
+  flex: 1;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+ 
+
+.container-input{
+  width: 60%;
+}
+.container-link{
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+.password-input-container{
+  position: relative;
+  width: 100%;
+}
+.password-input-container .bi {
+  position: absolute;
+  top: 50%;
+  right: 20px; 
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 1;
+}
+
+.container-link{
+  display: flex;
+  flex-direction: column;
+}
+
+.container-address{
+  margin: 10px 0px 10px 0px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 60%;
+}
+
+.container-address > div{
+  width: 30%;
+}
+
+.icon{
+  font-size: 30px;
+}
+
+.button{
+  cursor: pointer;
+}
+
+/* Estilos para dispositivos móviles (767px o menos) */
+@media screen and (max-width: 767px) {
+  .container {
+    width: 100%;
+  /*   height: 100vh; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f8ff;
+  }
+
+  .container-form {
+    background-color: #f0f8ff;
+    min-height: 20rem;
+    min-width: 100%; 
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .input-form {
+    display: block;
+    width: 80%;
+    padding: 25px 50px 25px 25px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px; 
+  }
+
+  .form-login button {
+    width: 5rem;
+    height: 3rem;
+    margin-bottom: 10px;
+    border: 1px solid #000000;
+    border-radius: 12px; 
+    background-color: #bad2ff88;
+  }
+
+  .container-address{
+    margin: 10px 0px 10px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+   /*  justify-content: space-between; */
+    width: 90%;
+  }
+
+  .container-address > div{
+    width: 100%;
+  }
+
+  .form-login {
+    background-color: aliceblue;
+    width: 100%; 
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .container-title{
+    width: 80%;
+    min-height: 15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .container-input{
+    width: 90%;
+  }
+  
+  .container-link{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+  }
+
+  .container-img {
+    flex: 0; 
+    display: none; 
+  }
+  .button{
+    cursor: pointer;
+  }
+  .icon{
+    font-size: 30px;
+  }
+  .password-input-container{
+    position: relative;
+    width: 100%;
+  }
+  .password-input-container .bi {
+    position: absolute;
+    top: 50%;
+    right: 10px; 
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 1;
+  }
+
+
+}
