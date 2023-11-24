@@ -3,7 +3,6 @@ import './css/projects.css';
 import { filterProjects } from '../redux/actions/projectActions'
 import { useDispatch, useSelector } from 'react-redux'
 import React, { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
 
 
 const Projects = () => {
@@ -104,10 +103,6 @@ const Projects = () => {
                             <label htmlFor="5">Otros</label>
 
                         </div>
-
-                        <Link to="/projectTypes" className="col-12 nav-link text-center">
-                            <p className="m-0 text-primary">¿Que son los tipos de proyectos?</p>
-                        </Link>
                 </ul>
             </div>
         
@@ -171,9 +166,7 @@ const Projects = () => {
 
                         </div>
 
-                        <Link to="/projectTypes" className="col-12  nav-link">
-                            <p className="m-0 text-primary">¿Que son los tipos de proyectos?</p>
-                        </Link>
+                      
                 </div>
 
                 
