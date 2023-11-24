@@ -29,7 +29,29 @@
 .container-search{
     width: 85%;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    gap: 2rem;
+    
+}
+
+.container-filter{
+    display: flex;
+    width: 20%;
+    gap: 1rem;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border: 1px solid rgb(216, 216, 216);
+    padding: 1rem;
+    border-radius: 10px;
+    margin-right: 1rem;
+    max-height: 32rem;
+    background-color: white;
+}
+
+.container-filter > div > input, .container-filter > div > label{
+    cursor: pointer;
+    margin: .2rem;
 }
 
 
@@ -53,6 +75,16 @@
 }
 
 @media screen and (max-width: 1050px){
+    
+    .container-filter{
+        display: flex;
+        width: 100%;
+        gap: 1rem;
+        flex-wrap: wrap;
+
+    }
+
+    
     .container-project{
         width: 85%;
         display: flex;

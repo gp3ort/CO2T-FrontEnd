@@ -24,7 +24,22 @@ export const getProjectById = async (id) =>{
     }
 }
 
+export const filterProjects = async (filterSelected) =>{
+    try{
+        const body = {
+            filter: filterSelected
+        }
+        console.log(body);
+        const request = await projectQuery.post("/filterProjects",body)
+        return request.data;
+    }catch(error){
+        console.log(error);
+        return error.response
+    }
+}
+
 export default {
     getAllProjects,
-    getProjectById
+    getProjectById,
+    filterProjects
 }

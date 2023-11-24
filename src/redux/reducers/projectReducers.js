@@ -1,5 +1,5 @@
 import { createReducer } from "@reduxjs/toolkit";
-import { getAllProjects, getProjectById } from "../actions/projectActions";
+import { filterProjects, getAllProjects, getProjectById } from "../actions/projectActions";
 
 const initialState = {
     allProjects : [],
@@ -19,6 +19,12 @@ export const projectsReducer = createReducer(initialState, (builder) =>{
             return {
                 ...state,
                 project: action.payload.result,
+            }
+        })
+        .addCase(filterProjects.fulfilled, (state, action) =>{
+            return {
+                ...state,
+                allProjects: action.payload.result,
             }
         })
 })

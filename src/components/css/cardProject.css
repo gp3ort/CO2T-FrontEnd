@@ -3,6 +3,12 @@
     min-height: 24rem;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+.card-component.sold-out {
+    filter: grayscale(100%);
+    width: 18rem;
+    min-height: 24rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
 .container-card-img > img{
     width: 18rem;
     height: 12rem;

@@ -10,7 +10,8 @@ import {addToCart} from '../redux/actions/operationActions';
 
 
 const CardProject = ({project, cart}) => {
-    const {id, name, description, tonsOfOxygen, price , image} = project
+    const {id, name, description, tonsOfOxygen, price , image, sold} = project
+    console.log(sold);
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const { user } = useSelector((store) => store.user);
@@ -67,7 +68,7 @@ const CardProject = ({project, cart}) => {
 
     const imgDefault = "https://ik.imagekit.io/900hpd9ky/CO2/imagen-por-defecto.png?updatedAt=1698270724661";
     return (
-        <div className="card-component"> 
+        <div className={`card-component ${sold ? 'sold-out' : ''}`}> 
             <div className="container-card-img">
                 <img src={!image ? imgDefault : image.fileNameURL.substring(0,4) !== "http" ? imgDefault : image.fileNameURL} />
             </div>
@@ -76,27 +77,51 @@ const CardProject = ({project, cart}) => {
                 <p className="card-text"><span className='fw-bold fs-5'>Descripccion:</span> {description}</p>
                 <p className="card-body-co2" ><span className='fw-bold'> Reduccion de CO2e:</span>  {tonsOfOxygen}T</p>
                 <p className='card-body-price'> <span className='fw-bold'>Precio:</span>   {formattedNumber(price)}</p>
+
                 <div className='container-buton-card'>
                     {isProductInCart ? (
+                        <>
                         <div className='text-danger button-card-carrito'>Proyecto ya seleccionado</div>
+                        <Link
+                        className='button-card-detalles'
+                        to={`/project/${id}`}
+                        >
+                            <i className="bi bi-info-circle-fill"></i>
+                        </Link>
+                        </>
+                    ) : sold ? (
+                        <div className='text-white bg-danger col-12 text-center'>Proyecto agotado</div>
                     ) : cart.length == 0 ? (
-                        <Link 
+                        <>
+                         <Link 
                             className="button-card-carrito"
                             onClick={addCartStorage}
                         >
                             <i className="bi bi-cart-plus"></i>
                         </Link>
+                         <Link
+                         className='button-card-detalles'
+                         to={`/project/${id}`}
+                        >
+                            <i className="bi bi-info-circle-fill"></i>
+                        </Link>
+                        </>
+                       
                     ) : (
+                        <>
                         <div className="button-card-carrito">Ya tiene un proyecto en el carrito</div>
-                    )}
-                    <Link
+                        <Link
                         className='button-card-detalles'
                         to={`/project/${id}`}
-                    >
-                        <i className="bi bi-info-circle-fill"></i>
-                    </Link>
+                        >
+                            <i className="bi bi-info-circle-fill"></i>
+                        </Link>
+                        </>
+                        
+                    )}
+                    
                 </div>
-                
+
             </div>
         </div>
     )
