@@ -4,6 +4,7 @@ const initialState = {
     user: null,
     token : null,
     error: null,
+    auth: null
 }
 export const userReducer = createReducer( initialState, ( builder ) => {
     builder
@@ -66,12 +67,13 @@ export const userReducer = createReducer( initialState, ( builder ) => {
                 token : null
             }
         })
-        .addCase(getUser, (stateActual, action) =>{
+        .addCase(getUser.fulfilled, (stateActual, action) =>{
             console.log(action);
             return {
                 ...stateActual,
-                user : action.payload.user,
-                token : action.payload.token
+                auth : action.payload.user,
+                token : action.payload.token,
+                
             }
         })
     })

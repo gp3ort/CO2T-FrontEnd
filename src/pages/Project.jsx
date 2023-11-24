@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { getProjectById , getAllProjects} from "../redux/actions/projectActions";
+import { getProjectById } from "../redux/actions/projectActions";
 import formattedNumber from "../middleware/formatNumber";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
@@ -22,6 +22,8 @@ const Project = () => {
    
     const project = useSelector((state) => state.projects.project);
     const navigate = useNavigate();
+
+  
 
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const isProductInCart = cart.some(item =>{
@@ -85,11 +87,26 @@ const Project = () => {
                     </div>
                     <div className="container-description-selected">
                         <h2>Descripcion</h2>
-                        {project.description}
+                        <p>{project.description}</p> 
                     </div>
                     <br />
-                    <h2>Compensacion de Co2</h2>
+                    <div className="container-description-selected">
+                        <h2>Compensacion de Co2</h2>
                     <p>Este proyecto tiene un total de {project.tonsOfOxygen}T de compensacion para el medio ambiente</p>
+                    </div>
+                    
+                    {project ? (
+                        <div className="container-description-selected" >
+                            <h2>Tipo de proyecto ({project.projectType.name})</h2>
+                            <p>{project.projectType.description} </p>
+                        </div>
+                    ) : (
+                        <div className="container-description-selected" >
+                            
+                        </div>
+                     )
+                    }
+                    
                 </div>
                 
                     <form className="container-form-project">
@@ -129,8 +146,6 @@ const Project = () => {
                                   reportadas están en línea con lo observado por CO2.</p>
                         </div>
                     </form>
-
-                   
                 
                 </>
             ) : (

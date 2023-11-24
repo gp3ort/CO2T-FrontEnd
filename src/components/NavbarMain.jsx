@@ -14,7 +14,7 @@ function NavrBarMain(){
       dispatch(logout());
     };
 
-/* 
+
     const userLogin = () =>{
       dispatch(getUser(user))
       .then(({payload}) =>{
@@ -30,10 +30,10 @@ function NavrBarMain(){
         }  
       })
     }
- */
+
     
- /*    const [auth, setAuth] = useState(null);
-    console.log(auth); */
+    const [auth, setAuth] = useState(null);
+    console.log(auth);
     const [cartCount, setCartCount] = useState(0);
     
     useEffect(() => {
@@ -93,7 +93,7 @@ function NavrBarMain(){
                         </a>
                         <ul className="dropdown-menu">   
                             <Link
-                              /* onClick={userLogin} */
+                              onClick={userLogin}
                               className="link dropdown-item"
                               data-bs-toggle="modal"
                               data-bs-target="#exampleModal">
@@ -114,51 +114,60 @@ function NavrBarMain(){
         </nav>
                     
       </header>
-      <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h1 className="modal-title fs-5" id="exampleModalLabel">Perfil personal</h1>
-              <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div className="modal-body">
-              <form className="container-perfil">
-{/*                 <h6> Correo electronico</h6>
-                <input type="text" placeholder="alfonso@gmail.com" disabled/>
-                <div className="container-perfil-chilldrem">
-                  <h6>Nombre usuario</h6>
-                  <input type="text" placeholder={auth.businessName} disabled/>
-                  <h6> Nombre completo</h6>
-                  <input type="text" placeholder={auth.userName} disabled/>
-                </div>
-                <div className="container-perfil-chilldrem">
-                  <h6> Medida de CO2</h6>
-                  <input type="text" placeholder={auth.cO2Measure} disabled/>
-                  <h6> Dirección</h6>
-                  <input type="text" placeholder={auth.address} disabled/>
-                </div>
+      {
+        auth ? (
+        <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div className="modal-dialog">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h1 className="modal-title fs-5" id="exampleModalLabel">Perfil personal</h1>
+                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div className="modal-body">
+                <form className="container-perfil">
+                  <h6> Correo electronico</h6>
+                  <input type="text" placeholder="alfonso@gmail.com" disabled/>
+                  <div className="container-perfil-chilldrem">
+                    <h6>Nombre usuario</h6>
+                    <input type="text" placeholder={auth.businessName} disabled/>
+                    <h6> Nombre completo</h6>
+                    <input type="text" placeholder={auth.userName} disabled/>
+                  </div>
+                  <div className="container-perfil-chilldrem">
+                    <h6> Medida de CO2</h6>
+                    <input type="text" placeholder={auth.cO2Measure} disabled/>
+                    <h6> Dirección</h6>
+                    <input type="text" placeholder={auth.address} disabled/>
+                  </div>
 
-                <div className="d-flex flex-column gap-1 col-12">
-                  <h6>Telefono</h6>
-                  <input type="text" placeholder={auth.phoneNumber} disabled/>
-                  <h6>descripción</h6>
-                  <input type="text" placeholder={auth.description} disabled/>
+                  <div className="d-flex flex-column gap-1 col-12">
+                    <h6>Telefono</h6>
+                    <input type="text" placeholder={auth.phoneNumber} disabled/>
+                    <h6>descripción</h6>
+                    <input type="text" placeholder={auth.description} disabled/>
+                    
+                      <h6>Rol</h6>
+                      <input type="text" placeholder={auth.rol} disabled/>
+                      <h6>Tipo de entidad</h6>
+                      <input type="text" placeholder={auth.entityType} disabled/>
                   
-                    <h6>Rol</h6>
-                    <input type="text" placeholder={auth.rol} disabled/>
-                    <h6>Tipo de entidad</h6>
-                    <input type="text" placeholder={auth.entityType} disabled/>
+                  </div>
                 
-                </div> */}
-               
-              </form>
-            </div>
-            <div className="modal-footer">
-              <button type="button" className="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                </form>
+              </div>
+              <div className="modal-footer">
+                <button type="button" className="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+        ) : (
+          <div>
+
+          </div>
+        )
+      }
+      
       </>
     );
 }

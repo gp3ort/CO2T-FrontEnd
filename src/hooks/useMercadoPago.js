@@ -89,7 +89,7 @@ export default function useMercadoPago() {
                             });
                     },
                     onFetching: (resource) => {
-                        // Animate progress bar
+                        
                         console.log(resource);
                         const progressBar =  document.querySelector(".progress-bar");
                         progressBar.removeAttribute("value");

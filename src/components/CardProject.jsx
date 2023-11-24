@@ -11,7 +11,6 @@ import {addToCart} from '../redux/actions/operationActions';
 
 const CardProject = ({project, cart}) => {
     const {id, name, description, tonsOfOxygen, price , image, sold} = project
-    console.log(sold);
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const { user } = useSelector((store) => store.user);
