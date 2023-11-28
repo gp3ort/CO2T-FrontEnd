@@ -62,10 +62,7 @@ function Entity(){
                         <h1>Seleccione una opcion para poder avanzar.</h1>
                     </div>
                     
-                    <div 
-                    className='container-selecter'
-                    
-                    >
+                    <div className='container-selecter'>
                         <label className='container-radio'>
                             <div>
                                 <h2>Individuo</h2>
