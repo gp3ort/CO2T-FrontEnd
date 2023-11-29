@@ -55,14 +55,6 @@ Además, asegúrate de tener `git` disponible en tu PATH, `npm` podría necesita
     $ cd PROJECT
     $ npm install
 
-### Configurar la aplicación
-
-Copia `config.sample.json` a `config.json` y luego edítalo con la URL donde hayas configurado:
-
-- API de backend
-- Endpoint similar a OAuth para autenticación
-- desarrollo
-
 ## Iniciar y observar
 
     $ npm run dev
