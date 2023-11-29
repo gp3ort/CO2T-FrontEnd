@@ -55,13 +55,13 @@ const Projects = () => {
        
         <>
 
-            <div class="hamburger-menu">
+            <div className="hamburger-menu">
                 <input id="menu__toggle" type="checkbox" />
-                <label class="menu__btn" for="menu__toggle">
+                <label className="menu__btn" htmlFor="menu__toggle">
                 <span></span>
                 </label>
             
-                <ul class="menu__box">
+                <ul className="menu__box">
                 <h3 className="text-center">Filtros</h3>
                         <div className="menu__item">
                             <input type="radio" id="all" onChange={handleRadioChange} checked={selectedFilter === "all"}/>
